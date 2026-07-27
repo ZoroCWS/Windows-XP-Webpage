@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40">
+  <defs>
+    <linearGradient id="startGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3C9B36"/>
+      <stop offset="50%" style="stop-color:#2D8E27"/>
+      <stop offset="100%" style="stop-color:#1E7F18"/>
+    </linearGradient>
+    <linearGradient id="startHover" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4AB844"/>
+      <stop offset="50%" style="stop-color:#3C9B36"/>
+      <stop offset="100%" style="stop-color:#2D8E27"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="2" width="118" height="36" rx="8" fill="url(#startGrad)" stroke="#1A6B14" stroke-width="1"/>
+  <!-- Windows flag icon -->
+  <g transform="translate(10, 8)">
+    <rect x="0" y="0" width="10" height="10" rx="1" fill="#FF4444" opacity="0.9"/>
+    <rect x="11" y="0" width="10" height="10" rx="1" fill="#44BB44" opacity="0.9"/>
+    <rect x="0" y="11" width="10" height="10" rx="1" fill="#4488FF" opacity="0.9"/>
+    <rect x="11" y="11" width="10" height="10" rx="1" fill="#FFDD44" opacity="0.9"/>
+  </g>
+  <!-- Start text -->
+  <text x="38" y="26" font-family="Tahoma, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="start">start</text>
+</svg>

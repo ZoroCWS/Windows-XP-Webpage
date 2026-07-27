@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="folderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE880"/>
+      <stop offset="100%" stop-color="#E8B020"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Folder Back tab -->
+  <path d="M3 8 L12 8 L15 10 L29 10 L29 25 L3 25 Z" fill="#D09010" stroke="#804800" stroke-width="0.8"/>
+  <!-- Folder Front -->
+  <path d="M2 12 L30 12 L27 27 L2 27 Z" fill="url(#folderGrad)" stroke="#B07000" stroke-width="0.8"/>
+</svg>

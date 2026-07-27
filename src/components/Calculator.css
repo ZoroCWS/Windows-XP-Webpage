@@ -1,0 +1,156 @@
+/* Windows XP Calculator Styles */
+.calculator {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ECE9D8;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 11px;
+}
+
+.calc-menubar {
+  display: flex;
+  gap: 2px;
+  padding: 2px 4px;
+  background: #ECE9D8;
+  border-bottom: 1px solid #ACA899;
+}
+
+.calc-menu-item {
+  padding: 2px 6px;
+  cursor: pointer;
+  color: #000;
+}
+
+.calc-menu-item:hover {
+  background: #316AC5;
+  color: white;
+}
+
+.calc-display-row {
+  padding: 4px 8px 2px;
+}
+
+.calc-display {
+  width: 100%;
+  height: 24px;
+  background: white;
+  border: 1px solid #7F9DB9;
+  border-right: 2px solid #7F9DB9;
+  border-bottom: 2px solid #7F9DB9;
+  text-align: right;
+  font-size: 16px;
+  font-family: 'Tahoma', sans-serif;
+  padding: 0 4px;
+  color: #000;
+  outline: none;
+}
+
+.calc-memory-row {
+  display: flex;
+  align-items: center;
+  padding: 2px 8px 4px;
+  gap: 6px;
+}
+
+.calc-mem-btn {
+  padding: 1px 6px;
+  background: transparent;
+  border: none;
+  color: #CC0000;
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif;
+  font-weight: bold;
+  cursor: default;
+}
+
+.calc-mem-indicator {
+  color: #CC0000;
+  font-size: 11px;
+  font-weight: bold;
+  min-width: 12px;
+}
+
+.calc-buttons {
+  display: flex;
+  gap: 4px;
+  padding: 0 8px 6px;
+  flex: 1;
+}
+
+.calc-btn-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.calc-btn-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+  flex: 1;
+}
+
+.calc-btn {
+  padding: 3px 2px;
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif;
+  border: 1px solid #ACA899;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  min-width: 32px;
+  min-height: 22px;
+}
+
+.calc-btn.num {
+  background: linear-gradient(to bottom, #FAFAFA 0%, #ECE9D8 100%);
+  color: #0000CC;
+  font-weight: bold;
+}
+
+.calc-btn.num:hover {
+  background: linear-gradient(to bottom, #FFF 0%, #E0DDD0 100%);
+}
+
+.calc-btn.num:active {
+  background: #DDD8C8;
+}
+
+.calc-btn.op {
+  background: linear-gradient(to bottom, #FAFAFA 0%, #ECE9D8 100%);
+  color: #CC0000;
+  font-weight: bold;
+}
+
+.calc-btn.op:hover {
+  background: linear-gradient(to bottom, #FFF 0%, #E0DDD0 100%);
+}
+
+.calc-btn.func {
+  background: linear-gradient(to bottom, #FAFAFA 0%, #ECE9D8 100%);
+  color: #CC0000;
+}
+
+.calc-btn.func:hover {
+  background: linear-gradient(to bottom, #FFF 0%, #E0DDD0 100%);
+}
+
+.calc-btn.mem {
+  background: linear-gradient(to bottom, #FAFAFA 0%, #ECE9D8 100%);
+  color: #CC0000;
+}
+
+.calc-btn.equals {
+  background: linear-gradient(to bottom, #FAFAFA 0%, #ECE9D8 100%);
+  color: #CC0000;
+  font-weight: bold;
+}
+
+.calc-btn:hover {
+  background: linear-gradient(to bottom, #FFF 0%, #E0DDD0 100%);
+}
+
+.calc-btn:active {
+  background: #DDD8C8;
+}

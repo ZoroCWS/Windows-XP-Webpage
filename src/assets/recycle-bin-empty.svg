@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Recycle Bin body -->
+  <path d="M12 16h24l-2 24H14L12 16z" fill="#E8E8E8" stroke="#666" stroke-width="1"/>
+  <path d="M14 16h20l-1.5 22h-17L14 16z" fill="#F5F5F5"/>
+  <!-- Lid -->
+  <path d="M10 14h28v3H10z" fill="#D4D0C8" stroke="#666" stroke-width="1" rx="1"/>
+  <rect x="20" y="11" width="8" height="4" rx="1" fill="#D4D0C8" stroke="#666" stroke-width="1"/>
+  <!-- Recycle arrows -->
+  <path d="M19 24l4-4 4 4M27 30l-4 4-4-4" fill="none" stroke="#3A6EA5" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="23,20 23,24 19,24" fill="#3A6EA5"/>
+  <polygon points="25,34 25,30 29,30" fill="#3A6EA5"/>
+</svg>

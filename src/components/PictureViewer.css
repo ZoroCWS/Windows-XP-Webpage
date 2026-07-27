@@ -1,0 +1,92 @@
+/* Picture Viewer / Windows Picture and Fax Viewer Styles */
+.picture-viewer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ECE9D8;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 11px;
+}
+
+.pv-menubar {
+  display: flex;
+  gap: 2px;
+  padding: 2px 4px;
+  background: #ECE9D8;
+  border-bottom: 1px solid #ACA899;
+}
+
+.pv-menu-item {
+  padding: 2px 6px;
+  cursor: pointer;
+  color: #000;
+}
+
+.pv-menu-item:hover {
+  background: #316AC5;
+  color: white;
+}
+
+.pv-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px 4px;
+  background: linear-gradient(to bottom, #FAFAFA 0%, #ECE9D8 100%);
+  border-bottom: 1px solid #ACA899;
+}
+
+.pv-tool-btn {
+  padding: 2px 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif;
+  cursor: pointer;
+  color: #000;
+}
+
+.pv-tool-btn:hover:not(:disabled) {
+  background: #C1D2EE;
+  border: 1px solid #316AC5;
+}
+
+.pv-tool-btn:disabled {
+  color: #ACA899;
+  cursor: default;
+}
+
+.pv-tool-separator {
+  width: 1px;
+  height: 20px;
+  background: #ACA899;
+  margin: 0 4px;
+}
+
+.pv-image-container {
+  flex: 1;
+  background: #2A2A2A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  padding: 8px;
+}
+
+.pv-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.pv-statusbar {
+  display: flex;
+  padding: 2px 8px;
+  background: #ECE9D8;
+  border-top: 1px solid #ACA899;
+  font-size: 11px;
+  color: #000;
+  min-height: 20px;
+}

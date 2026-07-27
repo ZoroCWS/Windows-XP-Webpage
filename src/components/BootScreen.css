@@ -1,0 +1,157 @@
+/* Boot Screen Styles */
+.boot-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: opacity 0.8s ease-out;
+}
+
+.boot-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.boot-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Windows Logo */
+.boot-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.windows-flag {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 30px;
+  animation: flagWave 2s ease-in-out infinite;
+}
+
+@keyframes flagWave {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.flag-pane {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  opacity: 0.95;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.flag-pane.red {
+  background: linear-gradient(135deg, #FF6B6B 0%, #EE3333 50%, #CC2222 100%);
+}
+
+.flag-pane.green {
+  background: linear-gradient(135deg, #66CC66 0%, #44AA44 50%, #228822 100%);
+}
+
+.flag-pane.blue {
+  background: linear-gradient(135deg, #6699FF 0%, #4477DD 50%, #2255BB 100%);
+}
+
+.flag-pane.yellow {
+  background: linear-gradient(135deg, #FFDD66 0%, #DDBB44 50%, #BB9922 100%);
+}
+
+/* Boot Text */
+.boot-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.microsoft-text {
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  color: #CCCCCC;
+}
+
+.windows-xp-text {
+  font-size: 34px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.xp {
+  color: #FF8800;
+  font-weight: bold;
+  margin-left: 3px;
+  text-shadow: 0 0 10px rgba(255, 136, 0, 0.3);
+}
+
+/* Progress Bar - XP Rotating Squares */
+.boot-progress-container {
+  width: 200px;
+  margin-bottom: 40px;
+}
+
+.boot-progress-bar {
+  width: 100%;
+  height: 18px;
+  background: #0a0a0a;
+  border-radius: 9px;
+  overflow: hidden;
+  border: 1px solid #333;
+  padding: 3px;
+}
+
+.boot-progress-fill {
+  height: 100%;
+  display: flex;
+  gap: 3px;
+  transition: width 0.15s ease-out;
+  align-items: center;
+}
+
+.progress-block {
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, #5CB8FF 0%, #3399FF 50%, #0077DD 100%);
+  border-radius: 1px;
+  flex-shrink: 0;
+  animation: blockGlow 1.5s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.1s);
+}
+
+@keyframes blockGlow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* Footer */
+.boot-footer {
+  position: absolute;
+  bottom: 25px;
+  text-align: center;
+}
+
+.copyright {
+  color: #666;
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif;
+  letter-spacing: 0.5px;
+}

@@ -1,0 +1,359 @@
+/* File Manager / Explorer Styles */
+.file-manager {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ECE9D8;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 11px;
+}
+
+/* Menu Bar */
+.fm-menubar {
+  display: flex;
+  gap: 2px;
+  padding: 2px 4px;
+  background: #ECE9D8;
+  border-bottom: 1px solid #ACA899;
+}
+
+.fm-menu-item {
+  padding: 2px 6px;
+  cursor: pointer;
+  color: #000;
+}
+
+.fm-menu-item:hover {
+  background: #316AC5;
+  color: white;
+}
+
+/* Toolbar */
+.fm-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px 4px;
+  background: linear-gradient(to bottom, #FAFAFA 0%, #ECE9D8 100%);
+  border-bottom: 1px solid #ACA899;
+}
+
+.fm-tool-btn {
+  padding: 2px 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif;
+  cursor: pointer;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.fm-tool-btn:hover:not(:disabled) {
+  background: #C1D2EE;
+  border: 1px solid #316AC5;
+}
+
+.fm-tool-btn:disabled {
+  color: #ACA899;
+  cursor: default;
+}
+
+.fm-tool-separator {
+  width: 1px;
+  height: 20px;
+  background: #ACA899;
+  margin: 0 4px;
+}
+
+/* Address Bar */
+.fm-addressbar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 6px;
+  background: #ECE9D8;
+  border-bottom: 1px solid #ACA899;
+}
+
+.fm-address-label {
+  font-size: 11px;
+  color: #000;
+  flex-shrink: 0;
+}
+
+.fm-address-input {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: white;
+  border: 1px solid #7F9DB9;
+  border-radius: 2px;
+  padding: 1px 4px;
+  height: 22px;
+}
+
+.fm-address-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.fm-address-text {
+  font-size: 11px;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Tahoma', sans-serif;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Breadcrumb */
+.fm-breadcrumb {
+  display: flex;
+  align-items: center;
+  padding: 2px 8px;
+  background: #ECE9D8;
+  border-bottom: 1px solid #ACA899;
+  font-size: 11px;
+  gap: 2px;
+  min-height: 20px;
+  overflow: hidden;
+}
+
+.fm-breadcrumb-part {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.fm-breadcrumb-sep {
+  color: #808080;
+  margin: 0 4px;
+}
+
+.fm-breadcrumb-btn {
+  background: transparent;
+  border: none;
+  color: #0066CC;
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif;
+  cursor: pointer;
+  padding: 1px 4px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.fm-breadcrumb-btn:hover {
+  background: #C1D2EE;
+  color: #003399;
+}
+
+.fm-go-btn {
+  padding: 2px 12px;
+  background: linear-gradient(to bottom, #FFFFFF 0%, #ECE9D8 100%);
+  border: 1px solid #ACA899;
+  border-radius: 3px;
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif;
+  cursor: pointer;
+  height: 22px;
+}
+
+.fm-go-btn:hover {
+  background: linear-gradient(to bottom, #FFFFFF 0%, #D6D2C2 100%);
+}
+
+/* Main Body */
+.fm-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Left Sidebar */
+.fm-sidebar {
+  width: 180px;
+  background: linear-gradient(to bottom, #6B90DA 0%, #5578C2 100%);
+  overflow-y: auto;
+  flex-shrink: 0;
+  padding: 4px;
+}
+
+.fm-sidebar-section {
+  background: white;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  overflow: hidden;
+  border: 1px solid #6B90DA;
+}
+
+.fm-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  background: linear-gradient(to bottom, #FFFFFF 0%, #D6DFF7 100%);
+  border-bottom: 1px solid #B0B8D0;
+  font-weight: bold;
+  font-size: 11px;
+  color: #21468B;
+  cursor: pointer;
+}
+
+.fm-sidebar-toggle {
+  font-size: 8px;
+  color: #6B90DA;
+}
+
+.fm-sidebar-content {
+  padding: 6px 8px;
+}
+
+.fm-sidebar-link {
+  display: block;
+  padding: 2px 0;
+  color: #21468B;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+.fm-sidebar-link:hover {
+  text-decoration: underline;
+  color: #E85010;
+}
+
+.fm-details {
+  font-size: 10px;
+}
+
+.fm-detail-row {
+  display: flex;
+  gap: 4px;
+  padding: 1px 0;
+}
+
+.fm-detail-label {
+  color: #666;
+}
+
+.fm-detail-value {
+  color: #000;
+  font-weight: bold;
+}
+
+/* Content Area */
+.fm-content {
+  flex: 1;
+  background: white;
+  border: 1px solid #B4B8C8;
+  margin: 0 4px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.fm-section-header {
+  padding: 4px 0 8px 0;
+  border-bottom: 1px solid #E0E0E0;
+  margin-bottom: 8px;
+}
+
+.fm-section-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #21468B;
+}
+
+/* File Grid */
+.fm-file-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fm-file-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  padding: 6px 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.fm-file-item:hover {
+  background: #C1D2EE;
+  border-color: #316AC5;
+}
+
+.fm-file-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.fm-file-icon img {
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.fm-file-emoji {
+  font-size: 28px;
+}
+
+.fm-file-name {
+  font-size: 11px;
+  color: #000;
+  word-wrap: break-word;
+  max-width: 80px;
+  line-height: 1.2;
+}
+
+.fm-file-item:hover .fm-file-name {
+  color: #000;
+  text-decoration: underline;
+}
+
+.fm-file-size,
+.fm-file-date {
+  font-size: 9px;
+  color: #666;
+  margin-top: 1px;
+}
+
+.fm-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #666;
+  font-style: italic;
+}
+
+/* Status Bar */
+.fm-statusbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 8px;
+  background: #ECE9D8;
+  border-top: 1px solid #ACA899;
+  font-size: 11px;
+  color: #000;
+  min-height: 20px;
+}

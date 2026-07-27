@@ -1,0 +1,157 @@
+/* Windows XP Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Tahoma', 'Segoe UI', 'Microsoft Sans Serif', sans-serif;
+  font-size: 11px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: url('/assets/cursors/default.svg') 2 2, default;
+}
+
+body {
+  background: #000;
+  user-select: none;
+}
+
+button, a, [role="button"], input, select, .start-menu-item, .context-menu-item, .desktop-icon {
+  cursor: url('/assets/cursors/pointer.svg') 8 2, pointer;
+}
+
+/* No outline on click for XP feel */
+button, a, [role="button"] {
+  outline: none;
+  font-family: 'Tahoma', 'Segoe UI', sans-serif;
+}
+
+button:focus-visible, a:focus-visible, [role="button"]:focus-visible {
+  outline: 1px dotted #000;
+  outline-offset: -3px;
+}
+
+/* Selection */
+::selection {
+  background: #316AC5;
+  color: white;
+}
+
+/* XP-style Button */
+.xp-button {
+  background: linear-gradient(180deg,
+    #FEFEFE 0%,
+    #E2E2D5 45%,
+    #D3D0C1 100%
+  );
+  border: 1px solid #707070;
+  border-radius: 3px;
+  padding: 3px 12px;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 #fff;
+  min-height: 23px;
+}
+
+.xp-button:hover {
+  background: linear-gradient(180deg,
+    #FCFCFC 0%,
+    #E9F3FF 45%,
+    #AAC7EF 100%
+  );
+  border-color: #316AC5;
+}
+
+.xp-button:active {
+  background: linear-gradient(180deg,
+    #D3D0C1 0%,
+    #E2E2D5 50%,
+    #ECE9D8 100%
+  );
+}
+
+.xp-button-primary {
+  background: linear-gradient(180deg,
+    #C4D9F5 0%,
+    #5D8FDC 50%,
+    #6E9FEC 100%
+  );
+  color: white;
+  border: 1px solid #10398B;
+  font-weight: bold;
+}
+
+.xp-button-primary:hover {
+  background: linear-gradient(180deg,
+    #D0E3FF 0%,
+    #6D9FEC 50%,
+    #7EAFF8 100%
+  );
+}
+
+/* XP-style Input */
+.xp-input {
+  background: white;
+  border: 1px solid #7F9DB9;
+  border-radius: 2px;
+  padding: 3px 6px;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 11px;
+  color: #000;
+  outline: none;
+  min-height: 21px;
+}
+
+.xp-input:focus {
+  border-color: #316AC5;
+  box-shadow: 0 0 3px rgba(49, 106, 197, 0.5);
+}
+
+/* Scrollbar Styles (XP-like) */
+::-webkit-scrollbar {
+  width: 17px;
+  height: 17px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1EFE2;
+  border: 1px solid #C0C0C0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg,
+    #ECE9D8 0%,
+    #E0DDD0 25%,
+    #D6D2C2 50%,
+    #CCC8BA 75%,
+    #C4C0B2 100%
+  );
+  border: 1px solid #ACA899;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg,
+    #F0EDE1 0%,
+    #E8E5D8 25%,
+    #E0DCD0 50%,
+    #D8D4C8 75%,
+    #D0CCC0 100%
+  );
+}
+
+::-webkit-scrollbar-button:single-button {
+  background: #ECE9D8;
+  border: 1px solid #ACA899;
+  height: 17px;
+  width: 17px;
+}
+
+::-webkit-scrollbar-button:single-button:hover {
+  background: #D6D2C2;
+}

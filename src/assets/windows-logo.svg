@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Windows flag -->
+  <defs>
+    <linearGradient id="red" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF4444"/>
+      <stop offset="100%" style="stop-color:#CC0000"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#44BB44"/>
+      <stop offset="100%" style="stop-color:#008800"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4488FF"/>
+      <stop offset="100%" style="stop-color:#0044CC"/>
+    </linearGradient>
+    <linearGradient id="yellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFDD44"/>
+      <stop offset="100%" style="stop-color:#CC9900"/>
+    </linearGradient>
+  </defs>
+  <!-- Four panes with wave effect -->
+  <g transform="translate(30, 40)">
+    <!-- Red pane (top-left) - wavy -->
+    <path d="M0,10 Q25,0 50,10 L50,50 Q25,45 0,50 Z" fill="url(#red)" opacity="0.95"/>
+    <!-- Green pane (top-right) -->
+    <path d="M55,8 Q80,-2 105,8 L105,48 Q80,43 55,48 Z" fill="url(#green)" opacity="0.95"/>
+    <!-- Blue pane (bottom-left) -->
+    <path d="M0,58 Q25,53 50,58 L50,98 Q25,93 0,98 Z" fill="url(#blue)" opacity="0.95"/>
+    <!-- Yellow pane (bottom-right) -->
+    <path d="M55,56 Q80,51 105,56 L105,96 Q80,91 55,96 Z" fill="url(#yellow)" opacity="0.95"/>
+  </g>
+</svg>

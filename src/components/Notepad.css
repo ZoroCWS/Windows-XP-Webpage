@@ -1,0 +1,115 @@
+/* Windows XP Notepad Styles */
+.notepad {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ECE9D8;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 11px;
+}
+
+.notepad-menubar {
+  display: flex;
+  gap: 0;
+  padding: 1px 2px;
+  background: #ECE9D8;
+  border-bottom: 1px solid #ACA899;
+}
+
+.notepad-menu-item-wrapper {
+  position: relative;
+}
+
+.notepad-menu-item {
+  padding: 3px 8px;
+  cursor: pointer;
+  color: #000;
+  display: block;
+}
+
+.notepad-menu-item:hover {
+  background: #316AC5;
+  color: white;
+}
+
+.notepad-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ACA899;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  min-width: 200px;
+  z-index: 10000;
+  padding: 2px 0;
+}
+
+.notepad-menu-item-wrapper:hover .notepad-dropdown {
+  display: block;
+}
+
+.notepad-dropdown-item {
+  padding: 4px 24px 4px 28px;
+  cursor: pointer;
+  color: #000;
+  white-space: nowrap;
+  position: relative;
+}
+
+.notepad-dropdown-item:hover {
+  background: #316AC5;
+  color: white;
+}
+
+.notepad-dropdown-item.disabled {
+  color: #ACA899;
+  cursor: default;
+}
+
+.notepad-dropdown-item.disabled:hover {
+  background: transparent;
+  color: #ACA899;
+}
+
+.menu-shortcut {
+  position: absolute;
+  right: 12px;
+  color: #808080;
+  font-size: 11px;
+}
+
+.notepad-dropdown-item:hover .menu-shortcut {
+  color: #D0D0FF;
+}
+
+.notepad-dropdown-divider {
+  height: 1px;
+  background: #E0E0E0;
+  margin: 2px 0;
+}
+
+.notepad-textarea {
+  flex: 1;
+  padding: 4px 6px;
+  background: white;
+  border: none;
+  resize: none;
+  font-family: 'Lucida Console', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.3;
+  outline: none;
+  color: #000;
+  tab-size: 8;
+}
+
+.notepad-statusbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2px 8px;
+  background: #ECE9D8;
+  border-top: 1px solid #ACA899;
+  font-size: 11px;
+  color: #000;
+  min-height: 20px;
+}

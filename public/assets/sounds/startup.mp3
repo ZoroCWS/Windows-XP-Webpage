@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html class="ltr" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="content-language" content="en">
+<title>Windows XP - Startup Sound Sound Effect MP3 Download Free - Quick Sounds</title>
+<meta name="description" content="Download Windows XP - Startup Sound sound effect in mp3 format for free without login or sign-up and find similar sounds at Quick Sounds library.">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D0FKXLZPTY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D0FKXLZPTY');
+</script>
+
+<link rel="shortcut icon" href="https://quicksounds.com/assets/resources/images/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://quicksounds.com/assets/resources/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">baseUrl = "https://quicksounds.com"; token_id = "171cec42731396ad1f1317afdaa3c3bc"; nowPlaying = viewed_id = 0; player_volume = 1; search_filter = "https://quicksounds.com/search/filter/tracks/"; explore_filter = "https://quicksounds.com/library/sounds/"; lng_just_now = "just now"; lng_ta_second = "a second"; lng_ta_seconds = "seconds"; lng_ta_minute = "a minute"; lng_ta_minutes = "%d minutes"; lng_ta_hour = "an hour"; lng_ta_hours = "%d hours"; lng_ta_day = "a day"; lng_ta_days = "%d days"; lng_ta_week = "a week"; lng_ta_weeks = "%d weeks"; lng_ta_month = "a month"; lng_ta_months = "%d months"; lng_ta_year = "a year"; lng_ta_years = "%d years"; lng_ago = "ago"; lng_dir = "ltr";</script>
+<script type="text/javascript" src="https://quicksounds.com/assets/resources/js/jquery.js"></script>
+<script defer type="text/javascript" src="https://quicksounds.com/assets/resources/js/jquery.timeago.js"></script>
+<script defer type="text/javascript" src="https://quicksounds.com/assets/resources/js/functions.js"></script>
+<script defer type="text/javascript" src="https://quicksounds.com/assets/resources/js/waveform.js"></script>
+<script defer type="text/javascript" src="https://quicksounds.com/assets/resources/js/jquery.jplayer.min.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6698572341223906" crossorigin="anonymous"></script>
+
+<div id="fcca"><font>Please enable JavaScript!</font></div>
+<script>
+    window.document.getElementById("fcca").parentNode.removeChild(window.document.getElementById("fcca")),
+        function(a, b) {
+            function c(a) {
+                a && fcc<?php
+header('Content-Type: text/plain; charset=utf-8;');
+session_start();
+require_once('./includes/config.php');
+$db = new mysqli($CONF['host'], $CONF['user'], $CONF['pass'], $CONF['name']);
+if ($db->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $db->connect_errno . ") " . $db->connect_error;
+}
+$db->set_charset("utf8");
+$apiVersion = 1.1;
+
+// Allowed $_GET['t'] values 
+$types = array('u', 't');
+
+echo '{"apiVersion":"'.$apiVersion.'", "data": ';
+if(in_array($_GET['t'], $types)) {
+	if($_GET['t'] == 'u') {
+		$result = getUser($_GET['q']);
+		
+		// Output the result
+		if(!empty($result['id'])) {
+			$result['image'] = $CONF['url'].'/thumb.php?src='.$result['image'].'&t=a&w=112&h=112';
+			$result['cover'] = $CONF['url'].'/thumb.php?src='.$result['cover'].'&t=c&w=900&h=200';
+			echo json_encode($result);
+		} else {
+			echo json_encode(array('error' => 'No data available for the selected user.'));
+		}
+	} elseif($_GET['t'] == 't') {
+		$user = getUser($_GET['q']);
+		$result = $db->query(sprintf("SELECT `id`, `uid` as `by`, `title`, `description`, `art`, `tag`, `buy`, `record`, `release`, `license`, `time`, `likes`, `views` FROM `tracks` WHERE `uid` = '%s' AND `public` = '1' AND `as3_track` = '0' ORDER BY `id` DESC LIMIT 0, 20", $db->real_escape_string($user['id'])));
+
+		$rows = array();
+		// Store the result
+		while($row = $result->fetch_assoc()) {
+			$rows[]	= $row; 
+		}
+		
+		foreach($rows as &$value) {
+			$value['art'] = $CONF['url'].'/thumb.php?src='.$value['art'].'&t=m&w=112&h=112';
+		}
+		
+		// Output the result
+		if(!empty($rows)) {
+			echo json_encode($rows);
+		} else {
+			echo json_encode(array('error' => 'No tracks available'));
+		}
+	}
+} else {
+	echo json_encode(array('error' => 'You need to specify a valid \'t\' parameter'));
+}
+echo '}';
+
+function getUser($username) {
+	global $db;
+	$sql = $db->query(sprintf("SELECT `idu` as `id`, `username`, `first_name`, `last_name`, `website`, `country`, `city`, `image`, `cover`, `private` FROM `users` WHERE `username` = '%s'", $db->real_escape_string($username)));
+	$user = $sql->fetch_assoc();
+	// Return if the user is public
+	if(!$user['private']) {
+		unset($user['private']);
+		return $user;
+	}
+}
+?>a.nextFunction()
+            }
+            var d = a.document,
+                e = ["i", "u"];
+            c.prototype = {
+                rand: function(a) {
+                    return Math.floor(Math.random() * a)
+                },
+                getElementBy: function(a, b) {
+                    return a ? d.getElementById(a) : d.getElementsByTagName(b)
+                },
+                getStyle: function(a) {
+                    var b = d.defaultView;
+                    return b && b.getComputedStyle ? b.getComputedStyle(a, null) : a.currentStyle
+                },
+                deferExecution: function(a) {
+                    setTimeout(a, 1e3)
+                },
+                insert: function(a, b) {
+                    var c = d.createElement("font"),
+                        e = d.body,
+                        f = e.childNodes.length,
+                        g = e.style,
+                        h = 0,
+                        i = 0;
+                    if ("fcca" == b) {
+                        for (c.setAttribute("id", b), g.marginBottom = "1px", f = this.rand(f); h < f; h++) 1 == e.childNodes[h].nodeType && (i = Math.max(i, parseFloat(this.getStyle(e.childNodes[h]).zIndex) || 0));
+                        i && (c.style.zIndex = i + 1), f++
+                    }
+                    c.innerHTML = a, e.insertBefore(c, e.childNodes[f - 1])
+                },
+                displayMessage: function(a) {
+                    var b = document.getElementById("body");
+                    //b.classList.add("modal");
+                    var c = this;
+                    a = "abisuq".charAt(c.rand(5)), c.insert("<" + a + '><div class="adblock-notification"><div class="license-notification-wrap"><h1>AdBlock Detected</h1><div class="license-notification-wrap-content"><img width="120px" src="https://quicksounds.com/stop.svg"><p>Please turn off your AdBlock to continue.<br> After you turn it off then reload this page.<br> QuickSounds cannot be free without ads.</p></div></div></div>' + ("</" + a + ">"), "fcca"), d.addEventListener && c.deferExecution(function() {
+                        c.getElementBy("fcca").addEventListener("DOMNodeRemoved", function() {
+                            c.displayMessage()
+                        }, !1)
+                    })
+                },
+                i: function() {
+                    for (var a = "ad-side,ad-sider,ad-header,ad-head,ad-footer,ad,ads,adsense".split(","), b = a.length, c = "", d = this, e = 0, f = "abisuq".charAt(d.rand(5)); e < b; e++) d.getElementBy(a[e]) || (c += "<" + f + ' id="' + a[e] + '"></' + f + ">");
+                    d.insert(c), d.deferExecution(function() {
+                        for (e = 0; e < b; e++)
+                            if (null == d.getElementBy(a[e]).offsetParent || "none" == d.getStyle(d.getElementBy(a[e])).display) return d.displayMessage("#" + a[e] + "(" + e + ")");
+                        d.nextFunction()
+                    })
+                },
+                u: function() {
+                    var a, c, d = ".com/ads.,/ad_option_,/adboxes/ad,/adcode/ad,/bbad10.,/ebayad.,/frontpagead/ad,/leftbanner/ad,_ad_bottom.,ad=300x250_,/130x100.".split(","),
+                        f = this,
+                        g = f.getElementBy(0, "img");
+                    g[0] !== b && g[0].src !== b && (a = new Image, a.onload = function() {
+                        c = this, c.onload = null, c.onerror = function() {
+                            e = null, f.displayMessage(c.src)
+                        }, c.src = g[0].src + "#" + d.join("")
+                    }, a.src = g[0].src), f.deferExecution(function() {
+                        f.nextFunction()
+                    })
+                },
+                nextFunction: function() {
+                    var a = e[0];
+                    a !== b && (e.shift(), this[a]())
+                }
+            }, a.fcca = fcca = new c, d.addEventListener ? a.addEventListener("load", c, !1) : a.attachEvent("onload", c)
+        }(window);
+</script>
+
+<script defer type="text/javascript">
+$(document).ready(function() {
+	$("#sound-player").jPlayer({
+		cssSelectorAncestor: '#sound-container',
+		play: function() {
+			// Verify if a view has been added already for this track
+			if(viewed_id == nowPlaying) {
+				return false;
+			} else {
+				updateTrackInfo(nowPlaying);
+				prevnext(3);
+			}
+			// Add the play count
+			viewed_id = nowPlaying;
+			$.ajax({
+				type: "POST",
+				url: "https://quicksounds.com/requests/add_view.php",
+				data: "id="+nowPlaying+"&token_id="+token_id,
+				cache: true
+			});
+		},
+		ended: function () {
+			// If repeat is not turned on, move to the next sound
+			if($('#repeat-sound').html() == 0) {
+				$('.current-seek').html($('#sound_ghost_player').html());
+				$('.current-play').show();
+				viewed_id = 0;
+				/*nextsound(nowPlaying);*/
+			}
+		},
+		swfPath: "https://quicksounds.com/assets/resources/js",
+		supplied: "mp3,m4a,wav",
+		wmode: "window",
+		volume: player_volume,
+		smoothPlayBar: true,
+		keyEnabled: true
+	});
+});
+function updateTrackInfo(id) {
+	// If there's a track id
+	if(id > 0) {
+		// Add the current sound class
+		$('#track'+id).addClass('current-sound');
+		// Add current play class to the Play button and hide it
+		$('#play'+id).addClass('current-play');
+		$('.current-play').hide();
+		$('.jp-audio .jp-time-holder').show();
+
+		// Add the active player to the current sound
+		$("#sound-controls"+id).html($("#seek-bar-sound").html());
+
+		// Add the active player class to the current sound
+		$("#sound-controls"+id).addClass('current-seek');
+
+		// Set the play/pause button position (this is needed for mobile view in order for the play/pause button to be at the same height with the initial play button)
+		if(lng_dir == "rtl") {
+			$('#track'+id+' .jp-play , #track'+id+' .jp-pause').css({ 'margin-top' : '-' + $('.sound-top', '#track'+id).outerHeight() + 'px', 'right' : '0' });
+		} else {
+			$('#track'+id+' .jp-play , #track'+id+' .jp-pause').css({ 'margin-top' : '-' + $('.sound-top', '#track'+id).outerHeight() + 'px' });
+		}
+		prevnext();
+
+		// Bind functionality to the new sound selector
+		$("#sound-player").jPlayer("option", "cssSelectorAncestor", '#sound-container');
+	}
+}
+function playsound(sound, id, format) {
+	// If the user is on a mobile device, open the track in a new tab rather than playing it on the page
+	/*if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		window.location = 'https://quicksounds.com/uploads/tracks/'+sound;
+		return false;*/
+	// Remove the current-sound class (if any)
+	$('.current-sound').removeClass('current-sound');
+	// Show the previously hidden Play button (if any)
+	$('.current-play').show();
+//	$(window).scrollTop($('#track'+id).offset().top-55);
+	$('.current-play').removeClass('current-play');
+
+	// Remove the active player if exists and set the ghost player
+	$('.current-seek').html($('#sound_ghost_player').html());
+
+	// Remove the active player class
+	$('.current-seek').removeClass('current-seek');
+
+	// Define the current playing track
+	nowPlaying = id;
+
+	// Update the track listing
+	updateTrackInfo(nowPlaying);
+	prevnext(3);
+
+	// Get the current sound name, url and author
+	var trackUrl = $('#sound-url'+id).attr('href');
+	//var artwork = $('#sound-art'+id).attr('src');
+	var soundName, shortsoundName = soundName = $('#sound-name'+id).html();
+	//var soundAuthor = $('#sound-author'+id).text();
+	var soundAuthorUrl = $('#sound-author'+id).attr('href');
+
+	if(soundName.length > 30) {
+		var shortsoundName = $('#sound-name'+id).html();
+	}
+
+	$('#sw-sound-name').html($('<a>', {html: shortsoundName, href: trackUrl, title: soundName, rel: 'loadpage'}));
+
+	// if the format is mp4, switch it to m4a since mp4 can be audio only
+	if(format == 'mp4') {
+		format = 'm4a';
+	}
+
+	if(format == 'mp3') {
+		$("#sound-player").jPlayer("setMedia",{mp3:sound}).jPlayer("play");
+	} else if(format == 'm4a') {
+		$("#sound-player").jPlayer("setMedia",{m4a:sound}).jPlayer("play");
+	} else if(format == 'wav') {
+		$("#sound-player").jPlayer("setMedia",{wav:sound}).jPlayer("play");
+	}
+}
+</script>
+
+</head>
+<body>
+
+<div id="loading-bar"><dd></dd><dt></dt></div>
+<header class="topbar">
+	<div class="header">
+		<a href="https://quicksounds.com" rel="loadpage"><div class="logo"></div></a>
+		<a href="https://quicksounds.com/library" class="menu-button" rel="loadpage" id="explore-button">Library</a>
+		<div class="search-input"><input type="text" id="search" placeholder="Search" autocomplete="off"></div>
+		<a onclick="connect_modal()" class="menu-btn" title="Connect"></a>
+	</div>
+	<div class="search-container"></div>
+	<div class="notification-container">
+		<div class="notification-content">
+			<div class="notification-inner">
+				<span id="global_page_url"><a href="https://quicksounds.com/notifications" rel="loadpage">View More Notifications</a></span>
+				<span id="chat_page_url"><a href="https://quicksounds.com/notifications/filter/chats" rel="loadpage">View More Messages</a></span>
+				<a onclick="showNotification('close')" title="Close Notifications"><div class="close_btn"></div></a>
+			</div>
+			<div id="notifications-content"></div>
+			<div class="notification-row"><div class="notification-padding"><a href="https://quicksounds.com/settings/notifications" rel="loadpage">Notifications Settings</a></div></div>
+		</div>
+	</div>
+</header>
+<div class="topbar_margin"></div> 
+
+<div class="ad-header">
+<div class="ad-head">
+<center>
+<style>
+.aduh { width: 320px; height: 100px; }
+@media(min-width: 500px)  { .aduh  { width: 468px; height:  60px; } }
+@media(min-width: 800px)  { .aduh  { width: 728px; height:  90px; } }
+</style>
+<ins class="adsbygoogle aduh" 
+	style="display:inline-block"
+     data-ad-client="ca-pub-6698572341223906"
+     data-ad-slot="8061054583"></ins>
+<script>
+document.addEventListener("DOMContentLoaded", function() {(adsbygoogle = window.adsbygoogle || []).push({});});
+</script>
+</center>
+</div>
+</div>
+
+
+<div id="content">
+	<div class="row-body content-sound">
+	<div class="body-content">
+		
+		<div class="grid-container">
+			<div class="grid-content" id="main-content">
+				
+				<h1 class="page-header page-header-extra">Windows XP - Startup Sound Sound</h1>
+				<div id="profile-card"></div>
+				<div id="track22798" class="sound-container sound-container-page">
+						
+						<div class="sound-top">
+							<div data-track-name="1835751195_908812515_887200171.mp3" data-track-id="22798" id="play22798" data-peak-url="https://quicksounds.com/uploads/peaks/1835751195_908812515_887200171.peak" data-track-url="https://quicksounds.com/uploads/tracks/1835751195_908812515_887200171.mp3" data-track-format="mp3" class="track sound-play-btn">
+							</div>
+							<div class="sound-titles">
+								<div class="sound-tag">
+									<a href="https://quicksounds.com/library/sounds/soundboard" rel="loadpage">soundboard</a>
+								</div>
+								<div class="sound-title">
+									<a href="https://quicksounds.com/sound/22798/windows-xp-startup-sound" id="sound-url22798" rel="loadpage"><h3 id="sound-name22798">Windows XP - Startup Sound</h3></a>
+								</div>
+							</div>
+						</div>
+					<div class="waveform" id="wave22798"></div>
+						<div class="player-controls">
+							<div id="sound-controls22798">
+								<div id="jp_container_123" class="jp-audio">
+									<div class="jp-type-single">
+											<div class="jp-gui jp-interface">
+											<div class="jp-current-time" id="current-time"></div>
+												<div class="jp-progress">
+													<div class="jp-seek-bar">
+													<div class="jp-play-bar"></div>
+												</div>
+											</div>
+											<div class="jp-duration" id="duration-time"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="track-actions-container">
+							<div class="track-actions"><div class="track-actions-content" id="track-action22798"><div class="track-buttons-container"><a href="https://quicksounds.com/uploads/tracks/1835751195_908812515_887200171.mp3" target="_blank" download="Windows XP - Startup Sound - QuickSounds.com.mp3" onclick="addDownload(22798);"><div class="download-button" title="Download"><span class="action-text">Download</span></div></a><div class="share-button" onclick="share(22798, 1)" title="Share"><span class="action-text">Share</span></div></div> <div class="track-stats"><a href="https://quicksounds.com/sound/22798/windows-xp-startup-sound" rel="loadpage"><div class="counter views_counter" title="Listened 277 times">277</div></a><a href="https://quicksounds.com/sound/22798/windows-xp-startup-sound" rel="loadpage"><div class="counter downloads_counter" title="Downloaded 49 times">49</div></a></div></div></div>
+						</div>
+						
+							<div class="comments-container" id="comments-list22798">
+								
+							</div>
+					</div>
+<div class="sidebar-container widget-description"><div class="sidebar-content"><div class="sidebar-header">License</div><div class="sidebar-description"><div class="sidebar-license"><a href="https://quicksounds.com/page/license-agreement" target="_blank" title="Standard License" rel="nofollow">Standard License</a></div></div><div class="sidebar-description">Description<br> <strong>Windows XP Startup — nostalgic boot-up chime, perfect for meme edits and soundboards with retro tech vibes.</strong></div></div></div>
+			</div>
+			<div class="grid-sidebar">
+				
+<div class="sidebar-container widget-suggestions"><div class="sidebar-header">recommended</div><div class="sidebar-suggestions-inner">
+					<div class="sidebar-suggestions">
+						<div class="sidebar-suggestions-image"><a href="https://quicksounds.com/sound/317/rainbow-six-siege-fuckin-lazer-sights" rel="loadpage"><img src="https://quicksounds.com/thumb.php?src=default.png&t=m&w=112&h=112" /></a></div>
+						<div class="sidebar-suggestions-info"><a href="https://quicksounds.com/profile/Administrator" title="View Profile" rel="loadpage"><div class="sidebar-title-name">Administrator</div></a>
+						<div class="sidebar-suggestions-track"><a href="https://quicksounds.com/sound/317/rainbow-six-siege-fuckin-lazer-sights" title="Rainbow Six Siege - Fuckin Lazer Sights" rel="loadpage">Rainbow Six Siege - Fuckin Lazer Sights</a></div>
+						</div>
+					</div>
+				</div><div class="sidebar-suggestions-inner">
+					<div class="sidebar-suggestions">
+						<div class="sidebar-suggestions-image"><a href="https://quicksounds.com/sound/267/ive-fallen-and-i-cant-get-up" rel="loadpage"><img src="https://quicksounds.com/thumb.php?src=default.png&t=m&w=112&h=112" /></a></div>
+						<div class="sidebar-suggestions-info"><a href="https://quicksounds.com/profile/Administrator" title="View Profile" rel="loadpage"><div class="sidebar-title-name">Administrator</div></a>
+						<div class="sidebar-suggestions-track"><a href="https://quicksounds.com/sound/267/ive-fallen-and-i-cant-get-up" title="I've Fallen and I Can't Get Up" rel="loadpage">I've Fallen and I Can't Get Up</a></div>
+						</div>
+					</div>
+				</div><div class="sidebar-suggestions-inner">
+					<div class="sidebar-suggestions">
+						<div class="sidebar-suggestions-image"><a href="https://quicksounds.com/sound/322/running-man-challenge" rel="loadpage"><img src="https://quicksounds.com/thumb.php?src=default.png&t=m&w=112&h=112" /></a></div>
+						<div class="sidebar-suggestions-info"><a href="https://quicksounds.com/profile/Administrator" title="View Profile" rel="loadpage"><div class="sidebar-title-name">Administrator</div></a>
+						<div class="sidebar-suggestions-track"><a href="https://quicksounds.com/sound/322/running-man-challenge" title="Running Man Challenge" rel="loadpage">Running Man Challenge</a></div>
+						</div>
+					</div>
+				</div></div>
+<div class="sidebar-container widget-statistics"><div class="sidebar-content"><div class="sidebar-header">Statistics</div><div class="sidebar-stats-container">
+				<div class="sidebar-stats-box">Plays Today</div><div class="sidebar-stats-box sidebar-text-right sidebar-stats-today">0</div>
+				<div class="sidebar-stats-box">Plays Yesterday</div><div class="sidebar-stats-box sidebar-text-right">0</div>
+				<div class="sidebar-stats-box">Plays Total</div><div class="sidebar-stats-box sidebar-text-right">0</div></div></div></div>
+
+<div class="sidebar-container widget-trending"><div class="sidebar-content"><div class="sidebar-header">Categories</div><div class="sidebar-description"><div class="sidebar-tag"><a href="https://quicksounds.com/library/sounds/soundboard" rel="loadpage">#soundboard</a></div><div class="sidebar-tag"><a href="https://quicksounds.com/library/sounds/meme" rel="loadpage">#meme</a></div><div class="sidebar-tag"><a href="https://quicksounds.com/library/sounds/windows" rel="loadpage">#windows</a></div><div class="sidebar-tag"><a href="https://quicksounds.com/library/sounds/xp" rel="loadpage">#xp</a></div><div class="sidebar-tag"><a href="https://quicksounds.com/library/sounds/startup" rel="loadpage">#startup</a></div><div class="sidebar-tag"><a href="https://quicksounds.com/library/sounds/sound" rel="loadpage">#sound</a></div></div></div></div>
+
+<div class="sidebar-container sidebar-report"><div class="sidebar-description"><a href="javascript:;" onclick="connect_modal()">Report</a></div></div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<div id="share" style="display: none;">
+	<div class="modal-container">
+		<div class="modal-title" id="share-title">
+			<div class="modal-menu-container">
+				<div class="modal-menu-item modal-menu-item-active" id="tab-share">Share</div>
+				<div class="modal-menu-item" id="tab-embed">Embed</div>
+			</div>
+		</div>
+		<div class="divider"></div>
+		<div class="tab-share">
+			<div class="modal-inner">
+				<div class="modal-desc">Share on Social Networks</div>
+				<div class="share-icon-container"><div class="social-icon-padding"><a id="fb-share" title="Share on Facebook"><div class="share-social-icon facebook-icon"></div></a></div></div>
+				<div class="share-icon-container"><div class="social-icon-padding"><a id="tw-share" title="Share on Twitter"><div class="share-social-icon twitter-icon"></div></a></div></div>
+				<div class="share-icon-container"><div class="social-icon-padding"><a id="pn-share" title="Share on Pinterest"><div class="share-social-icon pinterest-icon"></div></a></div></div>
+				<div class="share-icon-container"><div class="social-icon-padding"><a id="em-share" title="Share via email"><div class="share-social-icon email-icon"></div></a></div></div>
+			</div>
+			<div class="modal-inner">
+				<div class="modal-desc">Share URL</div>
+				<div class="modal-input"><input id="share-url" value="" readonly="readonly"></div>
+			</div>
+		</div>
+		<div class="tab-embed">
+			<div class="modal-inner">
+				<div class="dummy-player">
+					<div class="dummy-artwork"></div>
+					<div class="dummy-play-btn"></div>
+					<div class="dummy-author"></div>
+					<div class="dummy-title"></div>
+					<div class="dummy-seek"></div>
+					<div class="dummy-avatars"></div>
+					<div class="dummy-avatars"></div>
+					<div class="dummy-avatars"></div>
+					<div class="dummy-avatars"></div>
+					<div class="dummy-avatars"></div>
+				</div>
+				<div class="modal-desc">Embed Code</div>
+				<div class="modal-input"><input id="embed-url" value="" readonly="readonly"></div>
+				<div class="modal-checkbox"><input type="checkbox" name="autoplay" id="autoplay"><label for="autoplay">Autoplay</label></div>
+			</div>
+		</div>
+		<div class="divider"></div>
+		<div class="modal-menu">
+			<div class="modal-btn"><a onclick="share(0, 0)">Close</a></div>
+		</div>
+	</div>
+</div>
+<div id="playlist" style="display: none;">
+	<div class="modal-container">
+		<div class="modal-title" id="playlist-title">
+			<div class="modal-menu-container">
+				<div class="modal-menu-item modal-menu-item-active" id="tab-playlist">Sound Pack</div>
+				<div class="modal-loading"></div>
+			</div>
+		</div>
+		<div class="divider"></div>
+		<div class="tab-playlist">
+			<div class="modal-inner">
+				<input type="text" id="playlist-name" class="playlist-input" placeholder="Create new sound pack"><div onclick="playlist(0, 2)" class="button-normal playlist-save" id="playlist-save">Save</div>
+			</div>
+			<div class="modal-inner" id="playlists">
+
+			</div>
+		</div>
+		<div class="divider"></div>
+		<div class="modal-menu">
+			<div class="modal-btn"><a onclick="playlist(0, 0)">Close</a></div>
+		</div>
+	</div>
+</div>
+<div id="delete" style="display: none;">
+	<div class="modal-container">
+		<div class="modal-title" id="delete-title">
+			<div class="modal-menu-container">
+				<div class="modal-menu-item modal-menu-item-active" id="tab-delete">Delete</div>
+				<div class="modal-loading"></div>
+			</div>
+		</div>
+		<div class="divider"></div>
+		<div class="tab-delete">
+			<div class="modal-inner" id="delete-track" style="display: none;">
+				Are you sure you want to permanently delete this sound?
+			</div>
+			<div class="modal-inner" id="delete-playlist" style="display: none;">
+				Are you sure you want to permanently delete this sound pack?
+			</div>
+		</div>
+		<div class="divider"></div>
+		<div class="modal-menu">
+			<div class="modal-btn modal-btn-active"><a id="delete-button">Delete</a></div><div class="modal-btn"><a onclick="delete_modal(0, 'cancel')">Cancel</a></div>
+		</div>
+	</div>
+</div>
+
+
+</div>
+<div id="connect" style="display: none;">
+	<div class="modal-container">
+		<div class="modal-title" id="connect-title">
+			<div class="modal-menu-container">
+				<div class="modal-menu-item modal-menu-item-active" id="tab-login">Login</div>
+				<div class="modal-menu-item" id="tab-register">Register</div>
+				<div class="modal-loading"></div>
+			</div>
+		</div>
+		<div class="divider"></div>
+		<div class="tab-login">
+			<div id="login-message"></div>
+			<div class="modal-inner">
+				<form id="login-form" method="post">
+				<div class="modal-input modal-connect">
+					<input type="text" name="username" placeholder="Username or email">
+					<input type="password" name="password" placeholder="Password">
+				</div>
+				<div class="modal-checkbox"><input type="checkbox" name="remember" value="1" id="remember-me"><label for="remember-me">Remember me</label></div>
+				<input type="submit" style="display: none;"><!-- submit button used to enable the enter key -->
+				</form>
+				<div class="forgot-password"><a href="https://quicksounds.com/recover" rel="loadpage">Forgot your password?</a></div>
+			</div>
+			<div class="divider"></div>
+			<div class="modal-menu">
+				<div class="modal-btn modal-btn-active"><a id="login-button" onclick="connect(1)">Login</a></div><div class="modal-btn modal-btn-facebook"><a href="https://www.facebook.com/dialog/oauth?client_id=729113434532213&redirect_uri=https%3A%2F%2Fquicksounds.com%2Frequests%2Fconnect.php%3Ffacebook%3Dtrue&state=b461d60151261eeccd9e4d4dc2584498&scope=public_profile,email" class="facebook-button">Facebook</a></div>
+			</div>
+		</div>
+		<div class="tab-register">
+			<div id="register-message"></div>
+			<div class="modal-inner">
+				<div class="modal-input modal-connect">
+					<form id="register-form" method="post">
+					<input type="text" name="username" placeholder="Username">
+					<input type="password" name="password" placeholder="Password">
+					<input type="text" name="email" placeholder="Email">
+					<div class="modal-captcha"><input type="text" name="captcha" placeholder="Captcha"></div>
+	<span class="register-captcha" id="captcha-register"><img src="https://quicksounds.com/includes/captcha.php" /></span>
+					<input type="submit" style="display: none;"><!-- submit button used to enable the enter key -->
+					</form>
+				</div>
+			</div>
+			<div class="divider"></div>
+			<div class="modal-menu">
+				<div class="modal-btn modal-btn-active"><a id="register-button" onclick="connect(0)">Register</a></div><div class="modal-btn modal-btn-facebook"><a href="https://www.facebook.com/dialog/oauth?client_id=729113434532213&redirect_uri=https%3A%2F%2Fquicksounds.com%2Frequests%2Fconnect.php%3Ffacebook%3Dtrue&state=b461d60151261eeccd9e4d4dc2584498&scope=public_profile,email" class="facebook-button">Facebook</a></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-background"></div>
+<div class="row-body">
+	<div class="footer">
+		<div class="footer-container">
+			<div class="footer-links">
+				<span><a href="https://quicksounds.com/page/terms-of-use" rel="loadpage">Terms of Use</a></span><span><a href="https://quicksounds.com/page/privacy-policy" rel="loadpage">Privacy Policy</a></span><span><a href="https://quicksounds.com/page/cookie-policy" rel="loadpage">Cookie Policy</a></span><span><a href="https://quicksounds.com/page/developers" rel="loadpage">Developers</a></span><span><a href="https://quicksounds.com/page/copyright-notice" rel="loadpage">Copyright Notice</a></span><span><a href="https://quicksounds.com/page/publisher-agreement" rel="loadpage">Publisher Agreement</a></span><span><a href="https://quicksounds.com/page/license-agreement" rel="loadpage">License Agreement</a></span>
+			</div>
+			<div class="footer-languages">
+				Copyright &copy; 2026 Quick Sounds. All rights reserved.
+				
+				<!-- hit.ua -->
+<a href='http://hit.ua/?x=16185' target='_blank'>
+<script language="javascript" type="text/javascript"><!--
+Cd=document;Cr="&"+Math.random();Cp="&s=1";
+Cd.cookie="b=b";if(Cd.cookie)Cp+="&c=1";
+Cp+="&t="+(new Date()).getTimezoneOffset();
+if(self!=top)Cp+="&f=1";
+//--></script>
+<script language="javascript1.1" type="text/javascript"><!--
+if(navigator.javaEnabled())Cp+="&j=1";
+//--></script>
+<script language="javascript1.2" type="text/javascript"><!--
+if(typeof(screen)!='undefined')Cp+="&w="+screen.width+"&h="+
+screen.height+"&d="+(screen.colorDepth?screen.colorDepth:screen.pixelDepth);
+//--></script>
+<script language="javascript" type="text/javascript"><!--
+Cd.write("<img src='//c.hit.ua/hit?i=16185&g=0&x=2"+Cp+Cr+
+"&r="+escape(Cd.referrer)+"&u="+escape(window.location.href)+
+"' border='0' wi"+"dth='1' he"+"ight='1'/>");
+//--></script></a>
+<!-- / hit.ua -->
+
+	
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bottombar">
+
+	<div class="bottombar-container">
+		<div id="sound-player" class="jp-jplayer"></div>
+		<div id="sound-container" class="jp-audio top-player">
+			<div class="player-nine">
+				<div class="jp-type-single">
+					<div class="jp-gui jp-interface">
+						<div class="player-container-left">
+							<div class="player-buttons">
+								<a onclick="prevnext(1)" id="prev-button" class="prev-button" title="Previous Sound"></a>
+								<a class="jp-play" tabindex="1" title="Play"></a>
+								<a class="jp-pause" tabindex="1" title="Pause"></a>
+								<a onclick="prevnext(2)" id="next-button" class="next-button" title="Next Sound"></a>
+							</div>
+							<div class="player-repeat">
+								<a class="jp-repeat" tabindex="1" title="Repeat" onclick="repeatsound(1)"></a>
+								<a class="jp-repeat-off" tabindex="1" title="Repeat Off" onclick="repeatsound(0)"></a>
+								<div style="display: none;" id="repeat-sound">0</div>
+							</div>
+						</div>
+						<div class="player-container-middle">
+							<div class="jp-current-time" id="current-time"></div>
+							<div class="jp-progress">
+								<div class="jp-seek-bar">
+									<div class="jp-play-bar"></div>
+								</div>
+							</div>
+							<div class="jp-duration" id="duration-time"></div>
+						</div>
+						<div class="player-container-right">
+							<a class="jp-mute" tabindex="1" title="Mute"></a>
+							<a class="jp-unmute" tabindex="1" title="Unmute"></a>
+							<div class="jp-volume-bar" onclick="playerVolume()" title="Volume">
+								<div class="jp-volume-bar-value"></div>
+							</div>
+						</div>
+					</div>
+				<div class="jp-no-solution"></div>
+			</div>
+			</div>
+			<div class="player-three">
+				<div id="topbar-track-info">
+					<div id="topbar-track-details">
+						<div class="topbar-sound-name" id="sw-sound-name"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="seek-bar-sound" style="display: none;">
+	<div id="sound-container" class="jp-audio">
+		<div class="jp-type-single">
+			<div class="jp-gui jp-interface">
+				<a class="jp-play">&nbsp;</a><a class="jp-pause">&nbsp;</a>
+				<div class="jp-progress">
+					<div class="jp-seek-bar">
+						<div class="jp-seek-bar">
+							<div class="jp-play-bar"></div>
+					</div>
+				</div>
+				<div class="jp-time-holder">
+					<div class="jp-current-time"></div>
+					<div class="jp-duration"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="sound_ghost_player" style="display: none;"><div class="jp-audio"><div class="jp-type-single"><div class="jp-gui jp-interface"><div class="jp-progress"><div class="jp-seek-bar"><div class="jp-play-bar"></div></div></div></div></div></div></div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152749121-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-152749121-1');
+</script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"3570892918064022a6f974e0ce07919f","r":1}' crossorigin="anonymous"></script>
+</body>
+</html>
