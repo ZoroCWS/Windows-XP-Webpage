@@ -1,0 +1,33 @@
+.run-dialog-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: white;
+  height: 100%;
+}
+
+.run-prompt {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prompt-label {
+  font-size: 11px;
+  color: #000;
+  line-height: 1.4;
+}
+
+.run-input {
+  width: 100%;
+  padding: 4px;
+}
+
+.run-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: auto;
+  padding-bottom: 10px;
+}

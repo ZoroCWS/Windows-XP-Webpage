@@ -1,5 +1,6 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import { useDesktopStore, type WindowItem } from '../store/desktopStore';
+import { useSystemSound } from '../hooks/useSystemSound';
 import './Window.css';
 
 interface WindowProps {
@@ -10,6 +11,7 @@ interface WindowProps {
 export default function Window({ window: win, children }: WindowProps) {
   const nodeRef = useRef<HTMLDivElement>(null);
   const { activeWindowId, focusWindow, closeWindow, minimizeWindow, maximizeWindow, updateWindowPosition } = useDesktopStore();
+  const { playClose } = useSystemSound();
   const [isDragging, setIsDragging] = useState(false);
   const [animState, setAnimState] = useState<'none' | 'opening' | 'minimizing' | 'restoring'>('none');
   const wasMinimizedRef = useRef(win.isMinimized);
@@ -192,8 +194,12 @@ export default function Window({ window: win, children }: WindowProps) {
               <svg viewBox="0 0 12 12" width="12" height="12"><rect x="1" y="1" width="10" height="10" fill="none" stroke="white" strokeWidth="1.5"/></svg>
             )}
           </button>
-          <button className="titlebar-btn close" onClick={(e) => { e.stopPropagation(); closeWindow(win.id); }}>
-            <svg viewBox="0 0 12 12" width="12" height="12">
+           <button className="titlebar-btn close" onClick={(e) => { 
+             e.stopPropagation(); 
+             playClose();
+             closeWindow(win.id); 
+           }}>
+             <svg viewBox="0 0 12 12" width="12" height="12">
               <line x1="2" y1="2" x2="10" y2="10" stroke="white" strokeWidth="2"/>
               <line x1="10" y1="2" x2="2" y2="10" stroke="white" strokeWidth="2"/>
             </svg>

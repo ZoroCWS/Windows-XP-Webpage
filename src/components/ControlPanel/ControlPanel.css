@@ -1,0 +1,157 @@
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: 'Tahoma', sans-serif;
+  background: #ECE9D8;
+  color: #000;
+}
+
+.control-panel-header {
+  background: linear-gradient(180deg,
+    #F0F0F0 0%,
+    #E8E8E8 100%);
+  border-bottom: 1px solid #B5B5B5;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.control-panel-header h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+
+.control-panel-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.control-panel-sidebar {
+  width: 150px;
+  border-right: 1px solid #B5B5B5;
+  background: #F0F0F0;
+  overflow-y: auto;
+}
+
+.category-item {
+  padding: 10px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #E0E0E0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.category-item:hover {
+  background: #E8E8E8;
+}
+
+.category-item.selected {
+  background: #D4D0C8;
+  font-weight: bold;
+}
+
+.category-icon {
+  font-size: 16px;
+}
+
+.category-name {
+  font-size: 11px;
+}
+
+.control-panel-content {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.category-details {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.category-details h3 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  color: #000;
+}
+
+.placeholder-text {
+  margin: 0 0 20px 0;
+  font-size: 11px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.placeholder-icon {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.welcome-message {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.welcome-message h3 {
+  margin: 0 0 15px 0;
+  font-size: 14px;
+  color: #000;
+}
+
+.instruction-text {
+  margin: 0 0 20px 0;
+  font-size: 11px;
+  color: #666;
+}
+
+.welcome-icon {
+  font-size: 48px;
+  opacity: 0.7;
+}
+
+.control-panel-footer {
+  border-top: 1px solid #B5B5B5;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background: #F0F0F0;
+}
+
+.cp-button {
+  background: linear-gradient(180deg,
+    #FEFEFE 0%,
+    #E2E2D5 45%,
+    #D3D0C1 100%);
+  border: 1px solid #767672;
+  border-radius: 3px;
+  padding: 3px 12px;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  min-height: 22px;
+}
+
+.cp-button:hover {
+  background: linear-gradient(180deg,
+    #FCFCFC 0%,
+    #E9F3FF 45%,
+    #AAC7EF 100%);
+  border-color: #316AC5;
+}
+
+.cp-button:active {
+  background: linear-gradient(180deg,
+    #D3D0C1 0%,
+    #E2E2D5 50%,
+    #ECE9D8 100%);
+}
+
+.cp-button-help {
+  padding: 3px 8px;
+}

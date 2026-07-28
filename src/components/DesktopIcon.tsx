@@ -9,7 +9,7 @@ interface DesktopIconProps {
 
 export default function DesktopIcon({ icon }: DesktopIconProps) {
   const nodeRef = useRef<HTMLDivElement>(null);
-  const { selectedIconId, selectIcon, updateIconPosition, openContextMenu, openWindow } = useDesktopStore();
+  const { selectedIconId, selectIcon, updateIconPosition, openContextMenu, openWindow, openControlPanel } = useDesktopStore();
 
   const isSelected = selectedIconId === icon.id;
 
@@ -45,6 +45,8 @@ export default function DesktopIcon({ icon }: DesktopIconProps) {
         openWindow('notepad', 'Untitled - Notepad', '📝', 'notepad', { fileContent: '' });
       } else if (icon.id === 'calculator-shortcut') {
         openWindow('calculator', 'Calculator', '🧮', 'calculator');
+      } else if (icon.id === 'control-panel-shortcut') {
+        openControlPanel();
       }
     }
   };

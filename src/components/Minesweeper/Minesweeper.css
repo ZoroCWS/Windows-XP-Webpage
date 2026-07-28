@@ -1,0 +1,156 @@
+/* Minesweeper Windows XP Retro Styling */
+
+.minesweeper-app {
+  background: #C0C0C0;
+  padding: 6px;
+  border-top: 3px solid #FFFFFF;
+  border-left: 3px solid #FFFFFF;
+  border-bottom: 3px solid #808080;
+  border-right: 3px solid #808080;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.minesweeper-window-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #C0C0C0;
+  padding: 6px;
+  border-top: 3px solid #808080;
+  border-left: 3px solid #808080;
+  border-bottom: 3px solid #FFFFFF;
+  border-right: 3px solid #FFFFFF;
+}
+
+/* Scoreboard */
+.minesweeper-scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #C0C0C0;
+  padding: 4px 6px;
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-bottom: 2px solid #FFFFFF;
+  border-right: 2px solid #FFFFFF;
+  height: 44px;
+}
+
+/* LED style digital counter */
+.digital-counter {
+  background: #000000;
+  color: #FF0000;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 26px;
+  letter-spacing: 2px;
+  padding: 2px 4px;
+  border-top: 1.5px solid #808080;
+  border-left: 1.5px solid #808080;
+  border-bottom: 1.5px solid #FFFFFF;
+  border-right: 1.5px solid #FFFFFF;
+  height: 34px;
+  line-height: 28px;
+  width: 58px;
+  text-align: right;
+}
+
+/* Smiley face reset button */
+.minesweeper-smiley {
+  width: 26px;
+  height: 26px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #C0C0C0;
+  border-top: 2px solid #FFFFFF;
+  border-left: 2px solid #FFFFFF;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.minesweeper-smiley:active {
+  border-top: 2px solid #808080;
+  border-left: 2px solid #808080;
+  border-bottom: 2px solid #FFFFFF;
+  border-right: 2px solid #FFFFFF;
+}
+
+/* Grid layout */
+.minesweeper-grid {
+  border-top: 3px solid #808080;
+  border-left: 3px solid #808080;
+  border-bottom: 3px solid #FFFFFF;
+  border-right: 3px solid #FFFFFF;
+  background: #C0C0C0;
+  display: inline-block;
+}
+
+.minesweeper-row {
+  display: flex;
+}
+
+/* Individual cell styles */
+.minesweeper-cell {
+  width: 16px;
+  height: 16px;
+  background: #C0C0C0;
+  border-top: 2px solid #FFFFFF;
+  border-left: 2px solid #FFFFFF;
+  border-bottom: 2px solid #808080;
+  border-right: 2px solid #808080;
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif;
+  font-weight: 900;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  outline: none;
+}
+
+.minesweeper-cell:active:not(.revealed):not(.flagged) {
+  border: 1px solid #808080;
+  background: #C0C0C0;
+  width: 16px;
+  height: 16px;
+}
+
+.minesweeper-cell.revealed {
+  border: 1px solid #808080;
+  background: #C0C0C0;
+  cursor: default;
+}
+
+.minesweeper-cell.revealed.mine {
+  background: #FF0000;
+  border: 1px solid #808080;
+}
+
+/* Number colors (classic Minesweeper) */
+.minesweeper-cell.count-1 { color: #0000FF; }
+.minesweeper-cell.count-2 { color: #008000; }
+.minesweeper-cell.count-3 { color: #FF0000; }
+.minesweeper-cell.count-4 { color: #000080; }
+.minesweeper-cell.count-5 { color: #800000; }
+.minesweeper-cell.count-6 { color: #008080; }
+.minesweeper-cell.count-7 { color: #000000; }
+.minesweeper-cell.count-8 { color: #808080; }
+
+.minesweeper-cell.flagged {
+  color: #FF0000;
+  font-size: 8px;
+}

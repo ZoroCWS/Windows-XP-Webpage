@@ -3,7 +3,7 @@ import { useDesktopStore } from '../store/desktopStore';
 import './StartMenu.css';
 
 export default function StartMenu({ onShutDown }: { onShutDown?: () => void }) {
-  const { isStartMenuOpen, closeStartMenu, openWindow } = useDesktopStore();
+  const { isStartMenuOpen, closeStartMenu, openWindow, openRunDialog, openControlPanel, openMinesweeper } = useDesktopStore();
   const menuRef = useRef<HTMLDivElement>(null);
   const [isAllProgramsOpen, setIsAllProgramsOpen] = useState(false);
 
@@ -75,7 +75,7 @@ export default function StartMenu({ onShutDown }: { onShutDown?: () => void }) {
     { icon: '🧮', name: 'Calculator', action: () => handleOpenItem('Calculator') },
     { icon: '🎨', name: 'Paint', action: () => closeStartMenu() },
     { icon: '🎵', name: 'Windows Media Player', action: () => closeStartMenu() },
-    { icon: '🎮', name: 'Minesweeper', action: () => closeStartMenu() },
+    { icon: '🎮', name: 'Minesweeper', action: () => { openMinesweeper(); closeStartMenu(); } },
     { icon: '🃏', name: 'Solitaire', action: () => closeStartMenu() },
     { icon: '📂', name: 'Windows Explorer', action: () => handleOpenMyComputer() },
     { icon: '🍄', name: 'Super Mario Bros', action: () => handleOpenItem('Super Mario Bros') },
@@ -87,11 +87,11 @@ export default function StartMenu({ onShutDown }: { onShutDown?: () => void }) {
     { icon: '🎵', name: 'My Music', bold: true, action: () => handleOpenMyDocuments() },
     { icon: '💻', name: 'My Computer', bold: true, action: () => handleOpenMyComputer() },
     { divider: true },
-    { icon: '⚙️', name: 'Control Panel', action: () => closeStartMenu() },
+    { icon: '⚙️', name: 'Control Panel', action: () => { openControlPanel(); closeStartMenu(); } },
     { icon: '🖨️', name: 'Printers and Faxes', action: () => closeStartMenu() },
     { icon: '❓', name: 'Help and Support', action: () => closeStartMenu() },
     { icon: '🔍', name: 'Search', action: () => closeStartMenu() },
-    { icon: '▶️', name: 'Run...', action: () => closeStartMenu() },
+    { icon: '▶️', name: 'Run...', action: () => { openRunDialog(); closeStartMenu(); } },
   ];
 
   return (

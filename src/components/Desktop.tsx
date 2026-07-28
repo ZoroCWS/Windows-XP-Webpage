@@ -11,6 +11,9 @@ import Calculator from './Calculator';
 import GameWindow from './GameWindow';
 import PictureViewer from './PictureViewer';
 import ShutDown from './ShutDown';
+import RunDialog from './RunDialog/RunDialog';
+import ControlPanel from './ControlPanel/ControlPanel';
+import Minesweeper from './Minesweeper/Minesweeper';
 import BalloonNotification from './BalloonNotification';
 import './Desktop.css';
 
@@ -187,10 +190,16 @@ export default function Desktop() {
       case 'folder':
       case 'recycle-bin':
         return <FileManager windowId={win.id} currentPath={win.currentPath} />;
-      case 'notepad':
-        return <Notepad windowId={win.id} initialContent={win.fileContent || ''} />;
-      case 'calculator':
-        return <Calculator />;
+       case 'notepad':
+         return <Notepad windowId={win.id} initialContent={win.fileContent || ''} />;
+      case 'control-panel':
+        return <ControlPanel />;
+      case 'minesweeper':
+        return <Minesweeper />;
+       case 'run':
+         return <RunDialog />;
+       case 'calculator':
+         return <Calculator />;
       case 'game':
         return <GameWindow gameUrl={win.gameUrl || ''} title={win.title} />;
       case 'picture-viewer':

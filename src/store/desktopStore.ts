@@ -25,7 +25,7 @@ export interface WindowItem {
   id: string;
   title: string;
   icon: string;
-  type: 'my-computer' | 'recycle-bin' | 'notepad' | 'calculator' | 'game' | 'folder' | 'picture-viewer';
+  type: 'my-computer' | 'recycle-bin' | 'notepad' | 'calculator' | 'game' | 'folder' | 'picture-viewer' | 'run' | 'control-panel' | 'minesweeper';
   isMinimized: boolean;
   isMaximized: boolean;
   zIndex: number;
@@ -221,8 +221,11 @@ interface DesktopState {
     title: string,
     icon: string,
     currentPath?: string,
-    extra?: { fileContent?: string; imageSrc?: string; gameUrl?: string }
+    extra?: { fileContent?: string; imageSrc?: string; gameUrl?: string; width?: number; height?: number; x?: number; y?: number }
   ) => void;
+  openRunDialog: () => void;
+  openControlPanel: () => void;
+  openMinesweeper: () => void;
   closeWindow: (id: string) => void;
   minimizeWindow: (id: string) => void;
   maximizeWindow: (id: string) => void;
@@ -283,14 +286,22 @@ export const useDesktopStore = create<DesktopState>((set, get) => ({
       y: 290,
       type: 'shortcut',
     },
-    {
-      id: 'calculator-shortcut',
-      name: 'Calculator',
-      icon: '🧮',
-      x: 20,
-      y: 380,
-      type: 'shortcut',
-    },
+{
+       id: 'calculator-shortcut',
+       name: 'Calculator',
+       icon: '🧮',
+       x: 20,
+       y: 380,
+       type: 'shortcut',
+     },
+     {
+       id: 'control-panel-shortcut',
+       name: 'Control Panel',
+       icon: '/assets/images/icons/control-panel.svg',
+       x: 20,
+       y: 470,
+       type: 'shortcut',
+     },
   ],
   selectedIconId: null,
   setIcons: (icons) => set({ icons }),
@@ -353,10 +364,30 @@ export const useDesktopStore = create<DesktopState>((set, get) => ({
   activeWindowId: null,
   topZIndex: 100,
 
+  openRunDialog: () => {
+    const { openWindow } = get();
+    openWindow('run', 'Run', '🏃', 'run', {
+      width: 380,
+      height: 160,
+      x: typeof window !== 'undefined' ? (window.innerWidth - 380) / 2 : 300,
+      y: typeof window !== 'undefined' ? (window.innerHeight - 160) / 2 : 200,
+    });
+  },
+
+  openControlPanel: () => {
+    const { openWindow } = get();
+    openWindow('control-panel', 'Control Panel', '/assets/images/icons/control-panel.svg', 'Control Panel');
+  },
+
+  openMinesweeper: () => {
+    const { openWindow } = get();
+    openWindow('minesweeper', 'Minesweeper', '💣', 'minesweeper');
+  },
+
   openWindow: (type, title, icon, currentPath = 'My Computer', extra) => {
     const { windows, topZIndex } = get();
     // Check if window of same type & path already exists (allow multiple notepad/calculator/game)
-    const canMulti = type === 'notepad' || type === 'calculator' || type === 'game' || type === 'picture-viewer';
+    const canMulti = type === 'notepad' || type === 'calculator' || type === 'game' || type === 'picture-viewer' || type === 'minesweeper';
     if (!canMulti) {
       const existing = windows.find((w) => w.type === type && w.currentPath === currentPath);
       if (existing) {
@@ -374,8 +405,8 @@ export const useDesktopStore = create<DesktopState>((set, get) => ({
 
     const newZ = topZIndex + 1;
     const newId = `window-${type}-${Date.now()}`;
-    const initialWidth = type === 'notepad' ? 520 : type === 'calculator' ? 240 : type === 'game' ? 800 : type === 'picture-viewer' ? 600 : 720;
-    const initialHeight = type === 'notepad' ? 380 : type === 'calculator' ? 310 : type === 'game' ? 560 : type === 'picture-viewer' ? 450 : 480;
+    const initialWidth = type === 'notepad' ? 520 : type === 'calculator' ? 240 : type === 'game' ? 800 : type === 'picture-viewer' ? 600 : type === 'minesweeper' ? 210 : 720;
+    const initialHeight = type === 'notepad' ? 380 : type === 'calculator' ? 310 : type === 'game' ? 560 : type === 'picture-viewer' ? 450 : type === 'minesweeper' ? 290 : 480;
     const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 1024;
     const screenHeight = typeof window !== 'undefined' ? window.innerHeight : 768;
 
