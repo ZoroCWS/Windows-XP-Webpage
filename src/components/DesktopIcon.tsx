@@ -9,7 +9,7 @@ interface DesktopIconProps {
 
 export default function DesktopIcon({ icon }: DesktopIconProps) {
   const nodeRef = useRef<HTMLDivElement>(null);
-  const { selectedIconId, selectIcon, updateIconPosition, openContextMenu, openWindow, openControlPanel } = useDesktopStore();
+  const { selectedIconId, selectIcon, updateIconPosition, openContextMenu, openWindow, openControlPanel, openBrowser } = useDesktopStore();
 
   const isSelected = selectedIconId === icon.id;
 
@@ -47,6 +47,8 @@ export default function DesktopIcon({ icon }: DesktopIconProps) {
         openWindow('calculator', 'Calculator', '🧮', 'calculator');
       } else if (icon.id === 'control-panel-shortcut') {
         openControlPanel();
+      } else if (icon.id === 'ie-shortcut') {
+        openBrowser();
       }
     }
   };

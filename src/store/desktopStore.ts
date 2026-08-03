@@ -25,7 +25,7 @@ export interface WindowItem {
   id: string;
   title: string;
   icon: string;
-  type: 'my-computer' | 'recycle-bin' | 'notepad' | 'calculator' | 'game' | 'folder' | 'picture-viewer' | 'run' | 'control-panel' | 'minesweeper';
+  type: 'my-computer' | 'recycle-bin' | 'notepad' | 'calculator' | 'game' | 'folder' | 'picture-viewer' | 'run' | 'control-panel' | 'minesweeper' | 'browser';
   isMinimized: boolean;
   isMaximized: boolean;
   zIndex: number;
@@ -226,6 +226,7 @@ interface DesktopState {
   openRunDialog: () => void;
   openControlPanel: () => void;
   openMinesweeper: () => void;
+  openBrowser: () => void;
   closeWindow: (id: string) => void;
   minimizeWindow: (id: string) => void;
   maximizeWindow: (id: string) => void;
@@ -300,6 +301,14 @@ export const useDesktopStore = create<DesktopState>((set, get) => ({
        icon: '/assets/images/icons/control-panel.svg',
        x: 20,
        y: 470,
+       type: 'shortcut',
+     },
+     {
+       id: 'ie-shortcut',
+       name: 'Internet Explorer',
+       icon: '/assets/images/icons/ie.svg',
+       x: 20,
+       y: 560,
        type: 'shortcut',
      },
   ],
@@ -384,10 +393,18 @@ export const useDesktopStore = create<DesktopState>((set, get) => ({
     openWindow('minesweeper', 'Minesweeper', '💣', 'minesweeper');
   },
 
+  openBrowser: () => {
+    const { openWindow } = get();
+    openWindow('browser', 'Internet Explorer - Microsoft Internet Explorer', '🌐', 'browser', {
+      width: 800,
+      height: 580,
+    });
+  },
+
   openWindow: (type, title, icon, currentPath = 'My Computer', extra) => {
     const { windows, topZIndex } = get();
     // Check if window of same type & path already exists (allow multiple notepad/calculator/game)
-    const canMulti = type === 'notepad' || type === 'calculator' || type === 'game' || type === 'picture-viewer' || type === 'minesweeper';
+    const canMulti = type === 'notepad' || type === 'calculator' || type === 'game' || type === 'picture-viewer' || type === 'minesweeper' || type === 'browser';
     if (!canMulti) {
       const existing = windows.find((w) => w.type === type && w.currentPath === currentPath);
       if (existing) {
@@ -405,8 +422,8 @@ export const useDesktopStore = create<DesktopState>((set, get) => ({
 
     const newZ = topZIndex + 1;
     const newId = `window-${type}-${Date.now()}`;
-    const initialWidth = type === 'notepad' ? 520 : type === 'calculator' ? 240 : type === 'game' ? 800 : type === 'picture-viewer' ? 600 : type === 'minesweeper' ? 210 : 720;
-    const initialHeight = type === 'notepad' ? 380 : type === 'calculator' ? 310 : type === 'game' ? 560 : type === 'picture-viewer' ? 450 : type === 'minesweeper' ? 290 : 480;
+    const initialWidth = type === 'notepad' ? 520 : type === 'calculator' ? 240 : type === 'game' ? 800 : type === 'picture-viewer' ? 600 : type === 'minesweeper' ? 210 : type === 'browser' ? 800 : 720;
+    const initialHeight = type === 'notepad' ? 380 : type === 'calculator' ? 310 : type === 'game' ? 560 : type === 'picture-viewer' ? 450 : type === 'minesweeper' ? 290 : type === 'browser' ? 580 : 480;
     const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 1024;
     const screenHeight = typeof window !== 'undefined' ? window.innerHeight : 768;
 

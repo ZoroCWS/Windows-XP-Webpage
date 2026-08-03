@@ -14,6 +14,7 @@ import ShutDown from './ShutDown';
 import RunDialog from './RunDialog/RunDialog';
 import ControlPanel from './ControlPanel/ControlPanel';
 import Minesweeper from './Minesweeper/Minesweeper';
+import BrowserWindow from './BrowserWindow/BrowserWindow';
 import BalloonNotification from './BalloonNotification';
 import './Desktop.css';
 
@@ -196,6 +197,8 @@ export default function Desktop() {
         return <ControlPanel />;
       case 'minesweeper':
         return <Minesweeper />;
+      case 'browser':
+        return <BrowserWindow />;
        case 'run':
          return <RunDialog />;
        case 'calculator':

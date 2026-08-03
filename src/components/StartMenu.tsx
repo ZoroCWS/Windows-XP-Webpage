@@ -3,7 +3,7 @@ import { useDesktopStore } from '../store/desktopStore';
 import './StartMenu.css';
 
 export default function StartMenu({ onShutDown }: { onShutDown?: () => void }) {
-  const { isStartMenuOpen, closeStartMenu, openWindow, openRunDialog, openControlPanel, openMinesweeper } = useDesktopStore();
+  const { isStartMenuOpen, closeStartMenu, openWindow, openRunDialog, openControlPanel, openMinesweeper, openBrowser } = useDesktopStore();
   const menuRef = useRef<HTMLDivElement>(null);
   const [isAllProgramsOpen, setIsAllProgramsOpen] = useState(false);
 
@@ -60,13 +60,13 @@ export default function StartMenu({ onShutDown }: { onShutDown?: () => void }) {
   };
 
   const pinnedItems = [
-    { icon: '🌐', name: 'Internet Explorer', subtitle: 'Internet Browser', bold: true, action: () => closeStartMenu() },
+    { icon: '🌐', name: 'Internet Explorer', subtitle: 'Internet Browser', bold: true, action: () => { openBrowser(); closeStartMenu(); } },
     { icon: '📧', name: 'Outlook Express', subtitle: 'E-mail', bold: true, action: () => closeStartMenu() },
   ];
 
   const menuItems = [
     { icon: '📧', name: 'Outlook Express', bold: false, action: () => closeStartMenu() },
-    { icon: '🌐', name: 'Internet Explorer', bold: false, action: () => closeStartMenu() },
+    { icon: '🌐', name: 'Internet Explorer', bold: false, action: () => { openBrowser(); closeStartMenu(); } },
     { icon: '📨', name: 'MSN Messenger', bold: false, action: () => closeStartMenu() },
   ];
 
